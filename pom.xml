@@ -27,7 +27,7 @@
 					</descriptorRefs> 
 					<archive>
 						<manifest>
-							<mainClass>test.HelloAgent</mainClass>
+							<mainClass>test.MASStarter</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
