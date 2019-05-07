@@ -3,6 +3,7 @@ package test.agentcom;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
@@ -18,6 +19,18 @@ public class SecondAgent extends Agent {
 	@Override
 	protected void setup() {
 
+		addBehaviour(new OneShotBehaviour() {
+
+			@Override
+			public void action() {
+				ACLMessage msg_send = new ACLMessage(ACLMessage.INFORM);
+				msg_send.addReceiver(firstAgent);
+				msg_send.setContent(String.valueOf(counter));
+				myAgent.send(msg_send);
+				System.err.println("message sent");
+			}
+		});
+		
 	addBehaviour(new CyclicBehaviour() {
 		
 		@Override

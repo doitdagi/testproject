@@ -27,7 +27,7 @@
 					</descriptorRefs> 
 					<archive>
 						<manifest>
-							<mainClass>test.MASStarter</mainClass>
+							<mainClass>test.MainContainerStarter</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

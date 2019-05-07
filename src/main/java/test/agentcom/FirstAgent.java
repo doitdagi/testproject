@@ -20,17 +20,7 @@ public class FirstAgent extends Agent {
 	@Override
 	protected void setup() {
 
-		addBehaviour(new OneShotBehaviour() {
 
-			@Override
-			public void action() {
-				ACLMessage msg_send = new ACLMessage(ACLMessage.INFORM);
-				msg_send.addReceiver(secondAgent);
-				msg_send.setContent(String.valueOf(counter));
-				myAgent.send(msg_send);
-				System.err.println("message sent");
-			}
-		});
 
 		addBehaviour(new CyclicBehaviour() {
 
